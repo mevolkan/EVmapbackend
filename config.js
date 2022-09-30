@@ -6,8 +6,8 @@ dotenv.config({
 });
 
 module.exports = {
-    NODE_ENV : process.env.NODE_ENV || 'development',
-    MONGO_URI : process.env.MONGO_URI || 'mongodb://localhost/evmap',
-    HOST : process.env.HOST || 'localhost',
-    PORT : process.env.PORT || 3000,
+    NODE_ENV : process.env.NODE_ENV ,
+    MONGO_URI : process.env.MONGO_URI ,
+    HOST : process.env.HOST,
+    PORT : process.env.PORT,
 }
