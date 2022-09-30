@@ -4,7 +4,12 @@ var mongoose = require('mongoose');
 
 // Setup schema
 var stationsSchema = mongoose.Schema({
-
+    name: String,
+    address: String,
+    chargerType: String,
+    watts: String,
+    payment: Boolean,
+    amount: Number,
     location: String,
     website: String,
     create_date: {
