@@ -10,7 +10,17 @@ var stationsSchema = mongoose.Schema({
     watts: String,
     payment: Boolean,
     amount: Number,
-    location: String,
+    location: {
+        type: {
+            String,
+            enum: ['Point'],
+            required: true,
+        },
+        coordinates: {
+            type: [Number],
+            required: true
+        }
+    },
     create_date: {
         type: Date,
         default: Date.now
