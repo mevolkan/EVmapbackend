@@ -52,5 +52,5 @@ app.get('/', function (req, res) {
 app.use('/api', apiRoutes);
 
 app.listen(config.PORT, config.HOST, () => {
-    console.log(`APP LISTENING ON http://${config.HOST}:${config.PORT}`);
+    console.log(`APP LISTENING ON http://127.0.0.1:${config.PORT}`);
 })
