@@ -1,4 +1,4 @@
-let config =  require('./config.js');
+let config = require('./config.js');
 let express = require('express');
 let bodyParser = require('body-parser');
 const cors = require('cors');
@@ -9,7 +9,7 @@ let mongoose = require('mongoose');
 
 let app = express();
 
-console.log(`NODE_ENV=${config.NODE_ENV}`);
+console.log(`MONGO_URI= ${config.MONGO_URI}`);
 
 let apiRoutes = require("./api-routes")
 
@@ -34,7 +34,14 @@ app.use((req, res, next) => {
 });
 
 
-mongoose.connect('mongodb://localhost/evmap', { useNewUrlParser: true,useUnifiedTopology: true });
+mongoose.connect(`${config.MONGO_URI}`,{ useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        console.log("Connected to mongo database");
+    })
+    .catch((err) => {
+        console.log("Error connecting mongo database", err);
+        process.exit(1);
+    });
 
 var db = mongoose.connection;
 

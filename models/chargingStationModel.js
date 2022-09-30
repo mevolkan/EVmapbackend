@@ -11,7 +11,6 @@ var stationsSchema = mongoose.Schema({
     payment: Boolean,
     amount: Number,
     location: String,
-    website: String,
     create_date: {
         type: Date,
         default: Date.now

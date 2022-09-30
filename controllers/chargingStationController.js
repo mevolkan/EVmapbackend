@@ -24,15 +24,17 @@ exports.index = function (req, res) {
 exports.new = function (req, res) {
     var chargingStation = new ChargingStation();
     chargingStation.name = req.body.name ? req.body.name : chargingStation.name;
-    chargingStation.website = req.body.website;
-    chargingStation.email = req.body.email;
-    chargingStation.phone = req.body.phone;
-    chargingStation.loaction = req.body.phone;
+    chargingStation.address = req.body.address;
+    chargingStation.chargerType = req.body.chargerType;
+    chargingStation.watts = req.body.watts;
+    chargingStation.payment = req.body.payment;
+    chargingStation.amount = req.body.amount;
+    chargingStation.location = req.body.location;
 
     // save the chargingStation and check for errors
     chargingStation.save(function (err) {
-        // if (err)
-        //     res.json(err);
+        if (err)
+            res.json(err);
 
         res.json({
             message: 'New charging station created!',
@@ -61,10 +63,12 @@ exports.update = function (req, res) {
             res.send(err);
 
         chargingStation.name = req.body.name ? req.body.name : chargingStation.name;
-        chargingStation.website = req.body.website;
-        chargingStation.email = req.body.email;
-        chargingStation.phone = req.body.phone;
-        chargingStation.loaction = req.body.location;
+        chargingStation.address = req.body.address;
+        chargingStation.chargerType = req.body.chargerType;
+        chargingStation.watts = req.body.watts;
+        chargingStation.payment = req.body.payment;
+        chargingStation.amount = req.body.amount;
+        chargingStation.location = req.body.location;
 
         // save the chargingStation and check for errors
         chargingStation.save(function (err) {
