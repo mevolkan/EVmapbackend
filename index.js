@@ -27,13 +27,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-
-
 mongoose.connect(`${config.MONGO_URI}`,{ useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("Connected to mongo database");
