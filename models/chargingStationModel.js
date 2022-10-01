@@ -12,15 +12,15 @@ var stationsSchema = mongoose.Schema({
     amount: Number,
     location: {
         type: {
-            type:String,
-            enum: ['Point'],
-            required: true,
+          type: String, 
+          enum: ['Point'],
+          required: true
         },
         coordinates: {
-            type: [Number],
-            required: true
+          type: [Number],
+          required: true
         }
-    },
+      },
     create_date: {
         type: Date,
         default: Date.now
