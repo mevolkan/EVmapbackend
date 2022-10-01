@@ -12,7 +12,7 @@ var stationsSchema = mongoose.Schema({
     amount: Number,
     location: {
         type: {
-            String,
+            type:String,
             enum: ['Point'],
             required: true,
         },
