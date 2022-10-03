@@ -9,6 +9,7 @@ var stationsSchema = mongoose.Schema({
     chargerType: String,
     watts: String,
     payment: Boolean,
+    verified: Boolean,
     amount: Number,
     location: {
         type: {
