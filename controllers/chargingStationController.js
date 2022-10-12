@@ -30,6 +30,7 @@ exports.new = function (req, res) {
     chargingStation.payment = req.body.payment;
     chargingStation.amount = req.body.amount;
     chargingStation.location = req.body.location;
+    chargingStation.verified = req.body.verified;
 
     // save the chargingStation and check for errors
     chargingStation.save(function (err) {
@@ -69,6 +70,7 @@ exports.update = function (req, res) {
         chargingStation.payment = req.body.payment;
         chargingStation.amount = req.body.amount;
         chargingStation.location = req.body.location;
+        chargingStation.verified = req.body.verified;
 
         // save the chargingStation and check for errors
         chargingStation.save(function (err) {

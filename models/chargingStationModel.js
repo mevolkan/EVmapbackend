@@ -28,7 +28,7 @@ var stationsSchema = mongoose.Schema({
           required: true
         }
       },
-    create_date: {
+    dateAdded: {
         type: Date,
         default: Date.now
     }
