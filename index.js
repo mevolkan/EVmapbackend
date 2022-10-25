@@ -1,12 +1,9 @@
 let config = require('./config.js');
 let express = require('express');
 let bodyParser = require('body-parser');
-const cors = require('cors');
+let cors = require('cors');
 let mode = '';
-
-
 let mongoose = require('mongoose');
-
 let app = express();
 
 console.log(`MONGO_URI= ${config.MONGO_URI}`);
@@ -27,7 +24,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-mongoose.connect(`${config.MONGO_URI}`,{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`${config.MONGO_URI}`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("Connected to mongo database");
     })
