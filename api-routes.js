@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
 
 
 // Import hospital controller
-var chargingStationController = require('./controllers/chargingStationController');
+var chargingStationController = require('./src/controllers/chargingStationController');
 
 
 
